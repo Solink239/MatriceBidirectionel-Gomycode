@@ -1,0 +1,65 @@
+Sujet,Suite de test,ID Test,Description,Type,Sévérité,Prérequis,Étapes de reproduction,Résultat attendu,Résultat obtenu,Statut
+INSCRIPTION,"Suite_Inscription 
+TS_1",TC-01,"Vérifier que le tunnel de 
+création de compte fonctionne 
+sans erreur pour un nouvel 
+utilisateur.",Fonctionnel, Bloquant,Non connecté,"1. Se rendre sur https://demo.prestashop.com
+2. Cliquer sur ""Crée un compte""
+3. Remplir le formulaire (Infos valides)
+4. Cliquer sur ""Enregistrer""","Redirection vers la page de 
+connexion.","Redirection vers la page de 
+connexion.",PASS
+INSCRIPTION,"Suite_Inscription 
+TS_1",TC-02,"S'assurer que le système bloque
+l'inscription si des données 
+obligatoires manquent.",Fonctionnel,Majeur,Non connecté,"1. Se rendre sur https://demo.prestashop.com
+2. Cliquer sur ""Crée un compte""
+3. Laisser le champ ""Email"" vide
+2. Cliquer sur ""Enregistrer""","Message d'erreur : email 
+obligatoire.","Message d'erreur : email 
+obligatoire.",PASS
+,,,,,,,,,,
+CONNEXION,"Suite_Connexion 
+TS_2",TC-03,"Valider l'accès sécurisé à 
+l'espace client avec des 
+identifiants corrects.",Fonctionnel,Bloquant,Compte existant,"1. Se rendre sur https://demo.prestashop.com
+2. Saisir email et MDP valides
+3. Cliquer sur ""Connexion""",Accès au compte client réussi.,"Accès au compte 
+client réussi.",PASS
+CONNEXION,"Suite_Connexion 
+TS_2",TC-04,"Vérifier le message d'alerte 
+en cas de mauvaises coordonnées.",Fonctionnel,Majeur,Page de login,"1. Se rendre sur https://demo.prestashop.com
+2. Saisir des identifiants invalides
+2. Cliquer sur ""Connexion""","Message : 
+""Échec d'authentification"".","Message : 
+""Échec d'authentification"".",PASS
+,,,,,,,,,,
+RECHERCHE,"Suite_Recherche
+TC_3",TC-05,"Confirmer que le moteur de 
+recherche renvoie les bons 
+produits via un mot-clé précis.",Fonctionnel, Majeur,Page d'accueil,"1. Se rendre sur https://demo.prestashop.com
+2. Taper le nom d'un produit (ex: ""Mug"") 
+dans la barre de recherche","Affichage des produits 
+correspondants.",Affichage des produits correspondants.,PASS
+RECHERCHE,"Suite_Recherche
+TC_3",TC-06,"Vérifier que la recherche globale 
+permet de filtrer par famille 
+de produits.",Fonctionnel,Mineur,Page d'accueil,"1. Se rendre sur https://demo.prestashop.com
+2. Taper le nom d'une catégorie (ex: ""Vêtements"")","Affichage des produits 
+de la catégorie.","Affichage des produits
+de la catégorie.",PASS
+,,,,,,,,,,
+,,,,,,,,,,
+PANIER,"Suite_Panier
+TC_4",TC-07,"Vérifier la fiabilité de la calculatrice 
+du panier lors du cumul d'articles.",Fonctionnel, Bloquant,Boutique,"1. Se rendre sur https://demo.prestashop.com
+2. Ajouter deux produits différents au panier","Le prix total affiche la 
+somme exacte.","Le prix total affiche 
+la somme exacte.",PASS
+PANIER,"Suite_Panier
+TC_4",TC-08,"S'assurer que le retrait d'un article 
+met à jour le montant total 
+instantanément.",Fonctionnel, Majeur,Panier avec articles,"1. Se rendre sur https://demo.prestashop.com
+2. Cliquer sur la poubelle pour supprimer un article","L'article est retiré et le 
+total recalculé.","L'article est retiré et 
+le total recalculé.",PASS
